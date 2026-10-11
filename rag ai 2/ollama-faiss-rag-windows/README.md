@@ -1,104 +1,153 @@
 # 🧠 RAG AI Teaching Assistant
 
-### An AI-powered teaching assistant that answers questions using your uploaded study materials.
+<p align="center">
+  <img src="https://img.shields.io/badge/AI-RAG%20Assistant-7C3AED?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Development-00C7B7?style=for-the-badge" />
+</p>
+
+<h3 align="center">
+  📚 Your Study Materials. Your AI Assistant.
+</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Streamlit-Web%20App-red?style=for-the-badge&logo=streamlit&logoColor=white" />
-  <img src="https://img.shields.io/badge/Ollama-Local%20LLM-black?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/FAISS-Vector%20Search-orange?style=for-the-badge" />
+  An AI-powered learning assistant that answers questions using your uploaded documents through Retrieval-Augmented Generation (RAG).
+</p>
+
+<p align="center">
+  <a href="https://github.com/harshraghav766/my-rag-ai-assistance">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github" />
+  </a>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ollama-Local%20LLM-black?style=flat-square" />
+  <img src="https://img.shields.io/badge/FAISS-Vector%20Search-orange?style=flat-square" />
 </p>
 
 ---
 
-## 📌 About the Project
+## ✨ About the Project
 
-**RAG AI Teaching Assistant** is a document-based AI application built using Python and Retrieval-Augmented Generation (RAG).
+**RAG AI Teaching Assistant** is a Python-based AI project designed to make learning easier with document-based question answering.
 
-The application allows users to upload study materials and ask questions based on the available documents. It retrieves relevant information from the knowledge base and uses a language model to generate helpful answers.
+Instead of searching through lengthy notes manually, users can upload supported study materials and ask questions in natural language. The system retrieves relevant content from its knowledge base and uses an LLM to generate contextual answers.
 
-The project combines document retrieval, vector search, embeddings, and a local Large Language Model (LLM) to create an interactive learning experience.
+> 🎯 **Goal:** Make educational content easier to search, understand, and interact with using AI.
 
-## ✨ Key Features
+## 🚀 Features
 
-- 📚 **Document-Based Question Answering** — Ask questions about your study materials.
-- 🧠 **Retrieval-Augmented Generation (RAG)** — Retrieve relevant document content before generating answers.
-- 🔎 **Semantic Search** — Find relevant information using vector embeddings and FAISS.
-- 💬 **Interactive Chat Interface** — Ask questions through a Streamlit web application.
-- 📁 **Document Management** — Upload and manage supported study documents.
-- 🤖 **Local AI Inference** — Use Ollama to run supported language models locally.
-- 🔐 **Privacy-Focused Design** — Documents and model inference can remain on your own machine when using the local setup.
+<table>
+  <tr>
+    <td width="50%">
+      <h3>📄 Document Upload</h3>
+      Upload supported study materials and build a personal knowledge base.
+    </td>
+    <td width="50%">
+      <h3>🧠 RAG Pipeline</h3>
+      Retrieve relevant document context before generating answers.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>🔎 Semantic Retrieval</h3>
+      Use embeddings and FAISS for vector similarity search.
+    </td>
+    <td width="50%">
+      <h3>💬 AI Chat Interface</h3>
+      Interact with your documents through a Streamlit interface.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>🤖 Local LLM</h3>
+      Run supported language models locally using Ollama.
+    </td>
+    <td width="50%">
+      <h3>🔐 Privacy-Focused</h3>
+      Keep documents and inference local when using the local configuration.
+    </td>
+  </tr>
+</table>
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python" height="55" alt="Python" />
+  <img src="https://skillicons.dev/icons?i=git" height="55" alt="Git" />
+  <img src="https://skillicons.dev/icons?i=github" height="55" alt="GitHub" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Streamlit-Web%20UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ollama-LLM-black?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/FAISS-Vector%20Database-orange?style=for-the-badge" />
+</p>
+
+| Technology | Role |
 |---|---|
-| Python | Core programming language |
-| Streamlit | Interactive web interface |
-| Ollama | Running local language models |
+| Python | Application logic |
+| Streamlit | Interactive user interface |
+| Ollama | Local language model inference |
 | FAISS | Vector similarity search |
-| Embeddings | Representing document content numerically |
-| RAG | Retrieving context to answer questions |
+| Embeddings | Numerical representation of text |
+| RAG | Context-aware question answering |
 
 ## ⚙️ How It Works
 
-1. **Upload Documents:** Add your study materials to the application.
-2. **Process Documents:** Extract and prepare document content.
-3. **Generate Embeddings:** Convert text into vector representations.
-4. **Build Knowledge Base:** Store vectors in a FAISS index.
-5. **Ask Questions:** Enter a question in the chat interface.
-6. **Retrieve Context:** Find relevant document content.
-7. **Generate Answer:** Send the retrieved context to the language model to generate a response.
+```mermaid
+flowchart TD
+    A[📄 Upload Study Documents] --> B[Extract and Process Text]
+    B --> C[Generate Embeddings]
+    C --> D[(FAISS Vector Index)]
+    E[💬 User Question] --> F[Retrieve Relevant Context]
+    D --> F
+    F --> G[🤖 Ollama LLM]
+    G --> H[✅ AI Generated Answer]
+```
 
-## 🚀 Getting Started
+1. Upload documents.
+2. Process the document content.
+3. Create vector embeddings.
+4. Store and search vectors using FAISS.
+5. Retrieve relevant context for a question.
+6. Generate a contextual response using the LLM.
 
-### 1. Prerequisites
+## 💻 Installation & Setup
 
-Install the following:
-
-- Python 3.10 or a compatible version
-- Git
-- Ollama for local model inference
-
-Download Ollama: https://ollama.com/download
-
-### 2. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/harshraghav766/my-rag-ai-assistance.git
 cd my-rag-ai-assistance
 ```
 
-### 3. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### 4. Download the Required Models
+### 3. Install and configure Ollama
 
-The current local setup uses these Ollama models:
+Download Ollama from [ollama.com/download](https://ollama.com/download).
+
+For the current local configuration:
 
 ```bash
 ollama pull llama3.2:1b
 ollama pull nomic-embed-text
 ```
 
-Make sure Ollama is installed and running.
-
-### 5. Run the Application
+### 4. Run the application
 
 ```bash
 python -m streamlit run app.py
 ```
 
-Open the local URL displayed in your terminal, usually:
+Open the local address shown in the terminal, usually:
 
-```text
-http://localhost:8501
-```
+`http://localhost:8501`
 
-> **Note:** The commands above assume your repository contains `app.py` and `requirements.txt`, and that the application is configured to use these Ollama models.
+> ⚠️ These instructions assume the repository contains `app.py` and `requirements.txt` and that the application uses the specified Ollama models.
 
 ## 📂 Project Structure
 
@@ -113,38 +162,41 @@ my-rag-ai-assistance/
 └── storage/       # Generated vector index, if configured
 ```
 
-The exact folder structure may vary depending on your implementation.
+The actual structure depends on the files included in the repository.
 
-## 🎯 Project Objective
+## 🔮 Future Roadmap
 
-The goal of this project is to explore how Retrieval-Augmented Generation can make learning easier by allowing users to interact with their own educational content through natural-language questions.
-
-It demonstrates practical applications of Python, NLP concepts, vector databases, LLMs, and AI-powered application development.
-
-## 🔮 Future Improvements
-
-- Deploy an online version for public access.
-- Add support for more document formats.
-- Improve retrieval accuracy and answer quality.
-- Add conversation history and source references.
-- Create a more advanced learning assistant interface.
-- Integrate a hosted AI model for cloud deployment.
+- [ ] Deploy a public online demo.
+- [ ] Add source references to generated answers.
+- [ ] Improve document retrieval and ranking.
+- [ ] Add chat history and session management.
+- [ ] Expand support for document formats.
+- [ ] Improve the interface and user experience.
 
 ## 👨‍💻 Developer
 
-**Harshit Kumar**
+<p align="center">
+  <img src="https://img.shields.io/badge/Developer-Harshit%20Kumar-7C3AED?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Focus-AI%20%7C%20Data%20Science-0891B2?style=for-the-badge" />
+</p>
 
-BCA Student | Aspiring Data Analyst & Data Scientist
+<p align="center">
+  BCA Student • Python Developer • Aspiring Data Scientist
+</p>
 
-Interested in Python, Data Science, Machine Learning, and AI-powered applications.
-
-- **GitHub:** https://github.com/harshraghav766
-- **Project Repository:** https://github.com/harshraghav766/my-rag-ai-assistance
-
-## 📄 License
-
-This project is intended for educational and learning purposes. Add a `LICENSE` file if you want to publish it under a specific open-source license.
+<p align="center">
+  <a href="https://github.com/harshraghav766">
+    <img src="https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge&logo=github" />
+  </a>
+  <a href="https://github.com/harshraghav766/my-rag-ai-assistance">
+    <img src="https://img.shields.io/badge/Explore-My%20Project-16A34A?style=for-the-badge&logo=github" />
+  </a>
+</p>
 
 ---
 
-⭐ If you find this project interesting, consider starring the repository!
+<p align="center">
+  ⭐ If you find this project interesting, consider starring the repository!
+  <br/>
+  <b>Built with Python, curiosity, and a passion for AI. 🚀</b>
+</p>
